@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:events_app/controller/user_controller.dart';
 import 'package:events_app/views/screens/language_change_page.dart';
 import 'package:events_app/views/screens/my_events_page.dart';
@@ -64,9 +65,9 @@ class DrawerWidget extends StatelessWidget {
                 leading: const Icon(
                   Icons.discount,
                 ),
-                title: const Text(
-                  "Mening Tadbirlarim",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                title: Text(
+                  "mening_tadbirlarim".tr(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios_sharp),
               ),
@@ -75,9 +76,9 @@ class DrawerWidget extends StatelessWidget {
                 leading: const Icon(
                   Icons.person,
                 ),
-                title: const Text(
-                  "Profil Ma'lumotlari",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                title: Text(
+                  "profil_malumotlari".tr(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios_sharp),
               ),
@@ -91,9 +92,9 @@ class DrawerWidget extends StatelessWidget {
                 leading: const Icon(
                   Icons.translate,
                 ),
-                title: const Text(
-                  "Tilni o'zgartirish",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                title: Text(
+                  "tillarni_ozgartirish".tr(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios_sharp),
               ),
@@ -108,9 +109,9 @@ class DrawerWidget extends StatelessWidget {
                 leading: const Icon(
                   Icons.light_mode_outlined,
                 ),
-                title: const Text(
-                  "Tungi / kunduzgi holat",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                title: Text(
+                  "tungi_kunduzgi_holat".tr(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios_sharp),
               )

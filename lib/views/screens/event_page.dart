@@ -11,6 +11,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:easy_localization/easy_localization.dart'; // Import easy_localization
 
 class EventPage extends StatefulWidget {
   final Event event;
@@ -31,7 +32,7 @@ class _EventPageState extends State<EventPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Event Details'),
+        title: Text('tadbir_haqida_malumot'.tr()),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -67,7 +68,7 @@ class _EventPageState extends State<EventPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Number of participants:"),
+                  Text('ishtirokchilar_soni'.tr()),
                   Text(
                     widget.event.members.length.toString(),
                     style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurface),
@@ -105,13 +106,13 @@ class _EventPageState extends State<EventPage> {
                       ),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return const Text("Loading address...");
+                          return Text('manzil_yuklanmoqda'.tr());
                         }
                         if (snapshot.hasError) {
-                          return const Text("Could not fetch location information");
+                          return Text('manzil_topilmadi'.tr());
                         }
                         if (!snapshot.hasData || snapshot.data == null) {
-                          return const Text("No location information available");
+                          return Text('manzil_mavjud_emas'.tr());
                         } else {
                           return Text(
                             snapshot.data!,
@@ -164,10 +165,10 @@ class _EventPageState extends State<EventPage> {
                     );
                   }
                   if (snapshot.hasError) {
-                    return const Text("Error loading organizer information");
+                    return Text('tashkilotchi_yuklashda_xatolik'.tr());
                   }
                   if (!snapshot.hasData || snapshot.data == null) {
-                    return const Text("No organizer information available");
+                    return Text('tashkilotchi_topilmadi'.tr());
                   } else {
                     final organiser = snapshot.data!;
                     return ListTile(
@@ -185,7 +186,7 @@ class _EventPageState extends State<EventPage> {
                         style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurface),
                       ),
                       subtitle: Text(
-                        FirebaseAuth.instance.currentUser!.uid == widget.event.organiser ? "You are the organizer" : "Event Organizer",
+                        FirebaseAuth.instance.currentUser!.uid == widget.event.organiser ? 'siz_tashkilotchisiz'.tr() : 'tashkilotchi'.tr(),
                         style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurface.withOpacity(0.7)),
                       ),
                     );
@@ -215,7 +216,7 @@ class _EventPageState extends State<EventPage> {
                         width: 5,
                       ),
                     ),
-                    child: const Text("Register"),
+                    child: Text('royxatdan_otish'.tr()),
                   ),
                 ),
               if (widget.event.members.contains(FirebaseAuth.instance.currentUser!.uid) && FirebaseAuth.instance.currentUser!.uid != widget.event.organiser && widget.event.date.isAfter(DateTime.now()))
@@ -235,7 +236,7 @@ class _EventPageState extends State<EventPage> {
                         width: 5,
                       ),
                     ),
-                    child: const Text("Cancel Registration"),
+                    child: Text('bekor_qilish'.tr()),
                   ),
                 ),
               if (widget.event.date.isBefore(DateTime.now()) && FirebaseAuth.instance.currentUser!.uid != widget.event.organiser)
@@ -255,7 +256,7 @@ class _EventPageState extends State<EventPage> {
                         width: 5,
                       ),
                     ),
-                    child: const Text("Event Expired"),
+                    child: Text('tadbir_yakunlandi'.tr()),
                   ),
                 ),
             ],

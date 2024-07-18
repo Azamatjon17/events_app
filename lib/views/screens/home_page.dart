@@ -94,22 +94,22 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {},
                   icon: const Icon(Icons.tune),
                 ),
-                hintText: "Tadbirlarni izlash..",
+                hintText: "tadbirlarni_izlash".tr(),
               ),
             ),
             const Gap(10),
-            const Text(
-              "Yaqin 7 kun ichida",
-              style: TextStyle(
+            Text(
+              "yaqin_7_kun_ichida".tr(),
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const EventsWithinNextWeekWidget(),
             const Gap(10),
-            const Text(
-              "Barcha Tadbirlar",
-              style: TextStyle(
+            Text(
+              "barcha_tadbirlar".tr(),
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

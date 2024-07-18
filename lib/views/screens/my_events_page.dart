@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:events_app/views/widgets/my_events/old_event_page.dart';
 import 'package:events_app/views/widgets/my_events/organithed_event_page.dart';
 import 'package:events_app/views/widgets/my_events/soon_event_page.dart';
@@ -22,8 +23,8 @@ class _MyEventsPageState extends State<MyEventsPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Mening tadbirlarim",
+        title: Text(
+          "mening_tadbirlarim".tr(),
         ),
         actions: [
           InkWell(
@@ -51,15 +52,15 @@ class _MyEventsPageState extends State<MyEventsPage> {
         length: 4,
         child: Column(
           children: [
-            const TabBar(
+            TabBar(
               enableFeedback: true,
               isScrollable: true,
               indicatorWeight: 5,
               tabs: [
-                Text("Tashkil qilganlarim"),
-                Text("Yaqinda"),
-                Text("Ishtrok Etganlarim"),
-                Text("Bekor qilganlarim"),
+                Text("tashkil_qilganlarim".tr()),
+                Text("yaqinda".tr()),
+                Text("ishtirok_etganlarim".tr()),
+                Text("bekor_qilganlarim".tr()),
               ],
             ),
             Expanded(
